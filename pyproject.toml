@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "flask-ses-rq"
+version = "0.1.0"
+description = ""
+authors = ["AgathaBahati <matinodev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^3.0.3"
+flask-bootstrap = "^3.3.7.1"
+psycopg2-binary = "^2.9.9"
+flask-testing = "^0.8.1"
+flask-sqlalchemy = "^3.1.1"
+flask-wtf = "^1.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
