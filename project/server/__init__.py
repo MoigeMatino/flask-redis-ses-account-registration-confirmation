@@ -9,7 +9,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 # instantiate the extensions
-bootstrap = Bootstrap()
 db = SQLAlchemy()
 
 
@@ -28,7 +27,7 @@ def create_app(script_info=None):
     app.config.from_object(app_settings)
 
     # set up extensions
-    bootstrap.init_app(app)
+    Bootstrap(app)
     db.init_app(app)
 
     # register blueprints

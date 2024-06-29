@@ -1,0 +1,12 @@
+{%- macro render_form(form, button_style='primary') -%}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="email">{{ form.email.label.text }}</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-{{ button_style }}">{{ form.submit.label.text }}</button>
+        </div>
+    </form>
+{%- endmacro -%}
