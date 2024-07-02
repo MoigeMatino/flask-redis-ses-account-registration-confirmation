@@ -4,7 +4,7 @@
 import os
 
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap4
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -26,8 +26,11 @@ def create_app(script_info=None):
         'APP_SETTINGS', 'project.server.config.DevelopmentConfig')
     app.config.from_object(app_settings)
 
+    # set secret key
+    app.secret_key = os.environ.get('SECRET_KEY', 'my_secret_key')
+
     # set up extensions
-    Bootstrap(app)
+    bootstrap = Bootstrap4(app)
     db.init_app(app)
 
     # register blueprints
