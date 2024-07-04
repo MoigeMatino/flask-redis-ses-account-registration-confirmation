@@ -13,6 +13,7 @@ class BaseConfig(object):
     WTF_CSRF_ENABLED = False
     REDIS_URL = 'redis://redis:6379/0'
     QUEUES = ['default']
+    SECURITY_PASSWORD_SALT='email_confirmation_salt'
 
 
 class DevelopmentConfig(BaseConfig):

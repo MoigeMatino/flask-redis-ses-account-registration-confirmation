@@ -4,7 +4,7 @@ from project.server import db
 from project.server.models import User
 
 
-def send_email(email):
+def send_email(email, body):
     # TODO: replace with actual sending email functionality
     time.sleep(10) # simulate a process that takes time
     user = User.query.filter_by(email=email).first()
