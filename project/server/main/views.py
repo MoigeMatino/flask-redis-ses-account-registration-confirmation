@@ -10,6 +10,7 @@ from project.server import db
 from project.server.models import User
 from project.server.main.forms import RegisterForm
 from project.server.main.tasks import send_email
+from project.server.main.utils import encode_token, generate_url
 
 
 main_blueprint = Blueprint('main', __name__,)
@@ -22,15 +23,21 @@ def home():
         if form.validate_on_submit():
             try:
                 user = User(email=form.email.data)
+                # save user to db
                 db.session.add(user)
                 db.session.commit()
+                # generate token, confirm url and template
+                token = encode_token(user.email)
+                # TODO: create view for confirm_url
+                confirm_url = generate_url('main.confirm_url', token)
+                body = render_template('email.txt', confirm_url=confirm_url)
                 redis_url = current_app.config['REDIS_URL']
                 # connect to redis
                 with Connection(redis.from_url(redis_url)):
                     # create a new Queue instance
                     q = Queue()
                     # enqueue task to be executed
-                    q.enqueue(send_email, user.email)
+                    q.enqueue(send_email, user.email, body)
                 flash('Thank you for registering.', 'success')
                 return redirect(url_for("main.home"))
             except IntegrityError:
