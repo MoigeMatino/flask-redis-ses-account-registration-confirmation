@@ -28,8 +28,7 @@ def home():
                 db.session.commit()
                 # generate token, confirm url and template
                 token = encode_token(user.email)
-                # TODO: create view for confirm_url
-                confirm_url = generate_url('main.confirm_url', token)
+                confirm_url = generate_url('main.confirm_email', token)
                 body = render_template('email.txt', confirm_url=confirm_url)
                 redis_url = current_app.config['REDIS_URL']
                 # connect to redis
