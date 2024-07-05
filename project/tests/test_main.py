@@ -15,7 +15,7 @@ class TestMainBlueprint(BaseTestCase):
         # Ensure Flask is setup.
         response = self.client.get('/', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Flask + Redis Queue + Amazon SES', response.data)
+        self.assertIn(b'Email Registration', response.data)
         self.assertIn(b'Registered Users', response.data)
 
     def test_user_registration(self):
