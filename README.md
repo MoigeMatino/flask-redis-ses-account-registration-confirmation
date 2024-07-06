@@ -13,6 +13,7 @@ This repository demonstrates how to build a Flask application to send confirmati
 
 - Python 3.10+
 - Flask
+- Docker
 - Redis
 - Amazon SES credentials
 - AWS SDK (boto3)
