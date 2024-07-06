@@ -59,3 +59,12 @@ This repository demonstrates how to build a Flask application to send confirmati
 
 Make sure to set up your AWS SES credentials and verify your sender email in the AWS SES console.
 
+## Client/Server Email Confirmation Workflow
+
+1. **User Registration**: The user fills out the registration form and submits it.
+2. **Email Queue**: The server adds the email confirmation task to the Redis queue.
+3. **Email Sending**: The Redis worker picks up the task and sends a confirmation email using Amazon SES.
+4. **Email Confirmation**: The user receives the email and clicks on the confirmation link.
+5. **Account Activation**: The server processes the confirmation link and activates the user's account.
+
+
