@@ -47,12 +47,11 @@ This repository demonstrates how to build a Flask application to send confirmati
 4. Set up your environment variables:
 
     ```sh
-    export FLASK_APP=app.py
     export FLASK_ENV=development
     export AWS_ACCESS_KEY_ID=your-access-key-id
     export AWS_SECRET_ACCESS_KEY=your-secret-access-key
     export AWS_REGION=your-aws-region
-    export REDIS_URL=redis://localhost:6379/0
+    export REDIS_URL=redis://redis:6379/0
     ```
 ## Configuration
 
