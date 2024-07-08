@@ -7,7 +7,6 @@ This repository demonstrates how to build a Flask application to send confirmati
 - User registration with email confirmation
 - Sending emails using Amazon SES
 - Asynchronous email processing with Redis Queue
-- Simple and clean project structure
 
 ## Requirements
 
