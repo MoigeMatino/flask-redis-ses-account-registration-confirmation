@@ -2,6 +2,17 @@
 
 This repository demonstrates how to build a Flask application to send confirmation emails using Amazon Simple Email Service (SES) and Redis Queue (RQ). The project includes a complete workflow for client/server email confirmation.
 
+## Table of Contents
+
+1. [Project Description](#project-description)
+2. [Features](#features)
+3. [Requirements](#requirements)
+4. [Installation](#installation)
+5. [Configuration](#configuration)
+4. [Email confirmation Workflow](#email-confirmation-workflow)
+
+
+
 ## Features
 
 - User registration with email confirmation
