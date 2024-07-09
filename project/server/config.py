@@ -11,7 +11,7 @@ class BaseConfig(object):
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     WTF_CSRF_ENABLED = False
-    REDIS_URL = 'redis://redis:6379/0'
+    REDIS_URL = os.environ.get('REDIS_URL')
     QUEUES = ['default']
     SECURITY_PASSWORD_SALT='email_confirmation_salt'
 
