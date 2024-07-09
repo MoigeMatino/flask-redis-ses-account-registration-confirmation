@@ -11,12 +11,6 @@ services:
       - .:/usr/src/app
     env_file:
       - .env
-    environment:
-      - FLASK_DEBUG=1
-      - APP_SETTINGS=project.server.config.DevelopmentConfig
-      - DATABASE_URL=postgresql://postgres:postgres@users-db:5432/users_dev
-      - DATABASE_TEST_URL=postgresql://postgres:postgres@users-db:5432/users_test
-      - SECRET_KEY=my_secret_key
     depends_on:
       - users-db
 
@@ -27,21 +21,17 @@ services:
       dockerfile: Dockerfile
     expose:
       - 5432
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    env_file:
+      - .env
+    
 
   worker:
     image: users
     command: python manage.py run_worker
     volumes:
       - .:/usr/src/app
-    environment:
-      - FLASK_DEBUG=1
-      - APP_SETTINGS=project.server.config.DevelopmentConfig
-      - DATABASE_URL=postgresql://postgres:postgres@users-db:5432/users_dev
-      - DATABASE_TEST_URL=postgresql://postgres:postgres@users-db:5432/users_test
-      - SECRET_KEY=my_secret_key
+    env_file:
+      - .env
     depends_on:
       - users-db
       - redis
