@@ -1,4 +1,4 @@
-# Flask Redis AWS Account Registration Confirmation
+# Flask Redis AWS-SES Account Registration Confirmation
 This project demonstrates how to build a Flask application to handle user registration and email confirmation using Redis Queue (RQ) for background job processing and Amazon Simple Email Service (SES) for sending emails. The application allows users to register, receive a confirmation email, and confirm their email address.
 
 ## Table of Contents
