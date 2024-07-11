@@ -31,9 +31,11 @@ The application provides a simple user registration flow with email confirmation
 
 ## Features
 
-- User registration with email confirmation
-- Sending emails using Amazon SES
-- Asynchronous email processing with Redis Queue
+- **User Registration**: Simple user registration form with email input validation.
+- **Email Confirmation**: Automated email confirmation workflow using Redis Queue and Amazon SES.
+- **Background Job Processing**: Efficiently handles background tasks using Redis Queue.
+- **Email Sending**: Sends emails reliably using Amazon SES.
+- **RQ Dashboard**: Provides a web-based interface to monitor Redis Queue jobs, workers, and job statuses.
 
 ## Requirements
 
@@ -106,6 +108,9 @@ Follow these steps to set up the project on your local machine:
 
 3. **Access the application**:
     Open your web browser and go to `http://127.0.0.1:5003`.
+
+5. **Access the RQ Dashboard**:
+    Open your web browser and go to `http://127.0.0.1:9181`.
 
 ## Configuration
 
