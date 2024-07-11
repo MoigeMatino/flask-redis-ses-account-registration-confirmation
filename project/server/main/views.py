@@ -38,6 +38,7 @@ def home():
                     # enqueue task to be executed
                     q.enqueue(send_email, user.email, body)
                 flash('Thank you for registering.', 'success')
+                flash('Please check your email to confirm your account.', 'success')
                 return redirect(url_for("main.home"))
             except IntegrityError:
                 db.session.rollback()
