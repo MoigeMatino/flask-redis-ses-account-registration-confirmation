@@ -1,5 +1,4 @@
 services:
-
   users:
     build: .
     image: users
@@ -23,7 +22,6 @@ services:
       - 5432
     env_file:
       - .env
-    
 
   worker:
     image: users
@@ -38,3 +36,18 @@ services:
 
   redis:
     image: redis:6-alpine
+
+  dashboard:
+    build:
+      context: ./project/dashboard
+      dockerfile: Dockerfile
+    image: dashboard
+    container_name: rq_dashboard
+    # expose: 
+    #   - 9181
+    ports:
+      - 9181:9181
+    command: rq-dashboard -H redis
+    depends_on:
+      - redis
+    
