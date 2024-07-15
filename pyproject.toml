@@ -19,6 +19,7 @@ redis = "^5.0.7"
 rq = "^1.16.2"
 pytest = "^8.2.2"
 boto3 = "^1.34.141"
+pre-commit = "^3.7.1"
 
 
 [build-system]
