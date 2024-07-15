@@ -27,11 +27,11 @@ repos:
       - id: isort
 
   # run tests
-  # - repo: local
-  #   hooks:
-  #     - id: unittest
-  #       name: unittest
-  #       entry: python -m unittest discover -s tests
-  #       language: system
-  #       types: [python]
-  #       pass_filenames: false
+  - repo: local
+    hooks:
+      - id: unittest
+        name: unittest
+        entry: python -m unittest discover -s project/tests
+        language: system
+        types: [python]
+        pass_filenames: false
